@@ -28,4 +28,16 @@ export const getDiaryList = (limit?: number) => {
 	return sortedData;
 };
 
+export const getAllTags = () => {
+	const tags = new Set<string>();
+	for (const item of diaryData) {
+		if (item.tags) {
+			for (const tag of item.tags) {
+				tags.add(tag);
+			}
+		}
+	}
+	return Array.from(tags).sort();
+};
+
 export default diaryData;
