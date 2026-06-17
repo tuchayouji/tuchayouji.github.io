@@ -1,0 +1,70 @@
+---
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { Icon } from "astro-icon/components";
+import { profileConfig } from "../config";
+import Image from "@components/atoms/Image/Image.astro";
+---
+
+<MainGridLayout title="关于我" description="关于Tucha荼茶">
+	<div class="flex w-full rounded-[var(--radius-large)] overflow-hidden">
+		<div class="card-base z-10 px-9 py-9 relative w-full">
+			<div class="flex flex-col items-center mb-8">
+				<div class="w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-[var(--primary)]">
+					<Image src={profileConfig.avatar} alt="avatar" class="w-full h-full object-cover" />
+				</div>
+				<h1 class="text-3xl font-bold text-black/90 dark:text-white/90 mb-2">{profileConfig.name}</h1>
+				<p class="text-lg text-black/60 dark:text-white/60">{profileConfig.bio}</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+				<div class="bg-[var(--card-bg)] rounded-xl p-6 border border-black/5 dark:border-white/10">
+					<h2 class="text-xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+						<Icon name="material-symbols:person" class="text-[var(--primary)]" />
+						关于我
+					</h2>
+					<p class="text-black/70 dark:text-white/70 leading-relaxed">
+						一个喜欢代码和二次元的普通人，在这里记录学习和生活。
+					</p>
+				</div>
+
+				<div class="bg-[var(--card-bg)] rounded-xl p-6 border border-black/5 dark:border-white/10">
+					<h2 class="text-xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+						<Icon name="material-symbols:code" class="text-[var(--primary)]" />
+						技术栈
+					</h2>
+					<div class="flex flex-wrap gap-2">
+						{["JavaScript", "Vue", "Python", "Java", "C++", "Astro", "Tailwind CSS"].map(tech => (
+							<span class="px-3 py-1 bg-[var(--primary)]/10 text-[var(--primary)] rounded-full text-sm">{tech}</span>
+						))}
+					</div>
+				</div>
+
+				<div class="bg-[var(--card-bg)] rounded-xl p-6 border border-black/5 dark:border-white/10">
+					<h2 class="text-xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+						<Icon name="material-symbols:favorite" class="text-[var(--primary)]" />
+						兴趣爱好
+					</h2>
+					<p class="text-black/70 dark:text-white/70 leading-relaxed">
+						看动漫、写代码、玩游戏、听音乐
+					</p>
+				</div>
+
+				<div class="bg-[var(--card-bg)] rounded-xl p-6 border border-black/5 dark:border-white/10">
+					<h2 class="text-xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+						<Icon name="material-symbols:link" class="text-[var(--primary)]" />
+						联系方式
+					</h2>
+					<div class="flex flex-wrap gap-3">
+						{profileConfig.links.map(link => (
+							<a href={link.url} target="_blank" rel="noopener noreferrer"
+								class="flex items-center gap-2 px-4 py-2 bg-[var(--primary)]/10 hover:bg-[var(--primary)]/20 text-[var(--primary)] rounded-lg transition-colors">
+								<Icon name={link.icon} class="text-lg" />
+								<span>{link.name}</span>
+							</a>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</MainGridLayout>

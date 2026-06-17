@@ -1,0 +1,103 @@
+import type { AnimeItem } from "../types/config";
+
+
+const localAnimeList: AnimeItem[] = [
+	{
+		title: "樱花庄的宠物女孩",
+		status: "completed",
+		rating: 9.7,
+		cover: "/assets/anime/sakurasou.webp",
+		description: "世界级天才画家椎名真白搬进樱花庄，神田空太从此过着被缺乏常识的真白耍得团团转的日子",
+		episodes: "24 episodes",
+		year: "2012",
+		genre: ["Inspirational", "Romance", "Touching"],
+		studio: "J.C.Staff",
+		link: "https://www.bilibili.com/bangumi/media/md687",
+		progress: 24,
+		totalEpisodes: 24,
+		startDate: "2012-10",
+		endDate: "2013-03"
+	},
+	{
+		title: "莉可丽丝",
+		status: "completed",
+		rating: 9.8,
+		cover: "/assets/anime/lkls.webp",
+		description: "安宁的日常——背后却暗藏秘密，将犯罪防患于未然的秘密组织DA",
+		episodes: "12 episodes",
+		year: "2022",
+		genre: ["Action", "Slice of life"],
+		studio: "A-1 Pictures",
+		link: "https://www.bilibili.com/bangumi/media/md28338623",
+		progress: 12,
+		totalEpisodes: 12,
+		startDate: "2022-07",
+		endDate: "2022-09"
+	},
+	{
+		title: "飙速宅男",
+		status: "completed",
+		rating: 9.5,
+		cover: "/assets/anime/rynh.webp",
+		description: "千叶县立总北高中的新生小野田坂道是一个地地道道的动漫宅男",
+		episodes: "12 episodes",
+		year: "2015",
+		genre: ["Daily life", "Healing"],
+		studio: "Nexus",
+		link: "https://www.bilibili.com/bangumi/media/md2590",
+		progress: 8,
+		totalEpisodes: 12,
+		startDate: "2015-07",
+		endDate: "2015-09"
+	},
+	{
+		title: "恋爱小行星",
+		status: "watching",
+		rating: 9.2,
+		cover: "/assets/anime/laxxx.webp",
+		description: "木之幡米拉在小时候与在露营地遇见的男生约定，要找到小行星",
+		episodes: "12 episodes",
+		year: "2020",
+		genre: ["Romance", "Healing"],
+		studio: "Doga Kobo",
+		link: "https://www.bilibili.com/bangumi/media/md28224128",
+		progress: 5,
+		totalEpisodes: 12,
+		startDate: "2020-01",
+		endDate: "2020-03"
+	},
+	{
+		title: "请问您今天要来点兔子吗？",
+		status: "watching",
+		rating: 9.0,
+		cover: "/assets/anime/tz1.webp",
+		description: "以咖啡店为舞台，以天真烂漫的少女心爱为中心，讲述角色们愉快的日常生活",
+		episodes: "12 episodes",
+		year: "2014",
+		genre: ["Daily life", "Healing"],
+		studio: "White Fox",
+		link: "https://www.bilibili.com/bangumi/media/md2762",
+		progress: 12,
+		totalEpisodes: 12,
+		startDate: "2014-04",
+		endDate: "2014-06"
+	},
+	{
+		title: "沉默魔女的秘密",
+		status: "watching",
+		rating: 9.0,
+		cover: "/assets/anime/cmmn.webp",
+		description: "人类必须通过咏唱才能使用魔法，但有一个少女却打破了这个定律",
+		episodes: "12 episodes",
+		year: "2024",
+		genre: ["Daily life", "Healing", "Magic"],
+		studio: "C2C",
+		link: "https://www.bilibili.com/bangumi/media/md26625039",
+		progress: 8,
+		totalEpisodes: 12,
+		startDate: "2025-07",
+		endDate: "2025-10"
+	},
+];
+
+export default localAnimeList;

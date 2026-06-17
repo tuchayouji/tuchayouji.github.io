@@ -1,0 +1,12 @@
+{
+	"mode": "external",
+	"title": "私密相册",
+	"description": "需要密码才能查看的私密照片",
+	"date": "2026-06-16",
+	"location": "秘密花园",
+	"tags": ["私密", "加密"],
+	"password": "111213",
+	"passwordHint": "六位数字",
+	"cover": "https://picsum.photos/800/600?random=10",
+	"photos": []
+}
