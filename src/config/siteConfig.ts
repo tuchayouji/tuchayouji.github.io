@@ -4,24 +4,19 @@ import type { SiteConfig } from "../types/config";
 const SITE_LANG = "zh_CN"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
 
 export const siteConfig: SiteConfig = {
-	title: "Tucha的个人博客",
-	subtitle: "记录动漫、代码与日常随笔",
-<<<<<<< HEAD
-	siteURL: "https://tuchayouji.cn/", // 请替换为你的站点URL，以斜杠结尾
-=======
-	siteURL: "https://tuchayouji.cn", // 请替换为你的站点URL，以斜杠结尾
->>>>>>> 290f01a655d34c552db70842d1e521a4bb7141e0
-	siteStartDate: "2026-06-17", // 站点开始运行日期，用于站点统计组件计算运行天数
+  title: "Tucha的个人博客",
+  subtitle: "记录动漫、代码与日常随笔",
+  siteURL: "https://tuchayouji.cn", // 请替换为你的站点URL，以斜杠结尾
+  siteStartDate: "2026-06-17", // 站点开始运行日期，用于站点统计组件计算运行天数
+  lang: SITE_LANG,
 
-	lang: SITE_LANG,
+  themeColor: {
+    hue: 30, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
+    fixed: false, // 对访问者隐藏主题色选择器
+  },
 
-	themeColor: {
-		hue: 30, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
-		fixed: false, // 对访问者隐藏主题色选择器
-	},
-
-	// 特色页面开关配置（关闭未使用的页面有助于提升 SEO，关闭后请记得在 navbarConfig 中移除对应链接）
-	featurePages: {
+  // 特色页面开关配置（关闭未使用的页面有助于提升 SEO，关闭后请记得在 navbarConfig 中移除对应链接）
+  featurePages: {
 		anime: true, // 番剧页面开关
 		diary: true, // 日记页面开关
 		friends: true, // 友链页面开关
