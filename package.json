@@ -47,7 +47,6 @@
     "dayjs": "^1.11.21",
     "hastscript": "^9.0.1",
     "katex": "^0.17.0",
-    "l2d-widget": "^0.1.0",
     "markdown-it": "^14.2.0",
     "marked": "^18.0.5",
     "node-html-parser": "^7.1.0",
