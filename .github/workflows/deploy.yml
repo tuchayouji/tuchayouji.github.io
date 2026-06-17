@@ -11,19 +11,16 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Setup Node.js 20
+      - name: Setup Node.js 22
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm' # 缓存npm依赖，加速构建
-
+          node-version: 22
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
       - name: Install dependencies
-        run: npm install
-
+        run: pnpm install --no-frozen-lockfile
       - name: Build site
-        run: npm run build
-
+        run: pnpm run build
       - name: Deploy pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
