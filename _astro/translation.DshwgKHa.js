@@ -1,0 +1,1 @@
+import{j as t,z as o,a as e,e as n}from"./zh_TW.vPeSsvua.js";const s=e,r={en:n,en_us:n,en_gb:n,en_au:n,zh_cn:e,zh_tw:o,ja:t,ja_jp:t};function _(a){return r[a.toLowerCase()]||s}function u(a){return _("zh_cn")[a]}export{u as i};
