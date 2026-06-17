@@ -1,40 +1,30 @@
 name: Deploy to Pages Branch
-
 on:
   push:
     branches: [ main ]
   workflow_dispatch:
-
 permissions:
   contents: write
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          submodules: true
-          token: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: Setup Node.js
+
+      - name: Setup Node.js 20
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          run_install: false
-          
+          node-version: 20
+          cache: 'npm' # 缓存npm依赖，加速构建
+
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
-      
+        run: npm install
+
       - name: Build site
-        run: pnpm run build
-      
-      - name: Deploy to pages branch
+        run: npm run build
+
+      - name: Deploy pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: pages
