@@ -55,28 +55,28 @@ export default defineConfig({
 				shareUrl: false,
 			},
 		}),
-		swup({
-			theme: false,
-			animationClass: "transition-swup-",
-			containers: ["main"],
-			smoothScrolling: false,
-			// 关键修改：关闭页面缓存，彻底解决DOM重复复制、侧边栏重复
-			cache: false,
-			preload: false,
-			accessibility: true,
-			updateHead: process.env.NODE_ENV === "production",
-			updateBodyClass: false,
-			globalInstance: true,
-			resolveUrl: (url) => url,
-			animateHistoryBrowsing: false,
-			skipPopStateHandling: (event) => {
-				return (
-					event.state &&
-					event.state.url &&
-					event.state.url.includes("#")
-				);
-			},
-		}),
+		// swup({
+		// 	theme: false,
+		// 	animationClass: "transition-swup-",
+		// 	containers: ["main"],
+		// 	smoothScrolling: false,
+		// 	// 关键修改：关闭页面缓存，彻底解决DOM重复复制、侧边栏重复
+		// 	cache: false,
+		// 	preload: false,
+		// 	accessibility: true,
+		// 	updateHead: process.env.NODE_ENV === "production",
+		// 	updateBodyClass: false,
+		// 	globalInstance: true,
+		// 	resolveUrl: (url) => url,
+		// 	animateHistoryBrowsing: false,
+		// 	skipPopStateHandling: (event) => {
+		// 		return (
+		// 			event.state &&
+		// 			event.state.url &&
+		// 			event.state.url.includes("#")
+		// 		);
+		// 	},
+		// }),
 		icon(),
 		expressiveCode({
 			themes: ["github-light", "github-dark"],
