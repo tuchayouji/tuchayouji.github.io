@@ -8,6 +8,11 @@ export interface DiaryItem {
 
 const diaryData: DiaryItem[] = [
 	{
+		id: 3,
+		content: "今天做了个个人博客管理系统，基于Vue和FastAPI，功能还挺齐全的",
+		date: "2026-06-18T21:28:00+08:00"
+	},
+	{
 		id: 2,
 		content: "部署成功，域名也搞好了",
 		date: "2026-06-17T22:05:51+08:00"
