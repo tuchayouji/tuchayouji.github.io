@@ -3,6 +3,22 @@ import type { AnimeItem } from "../types/config";
 
 const localAnimeList: AnimeItem[] = [
 	{
+		title: "变态王子与不笑猫",
+		status: "completed",
+		rating: 9.7,
+		cover: "/assets/anime/hentaiouji.webp",
+		description: "高中生横寺阳人向不笑猫像祈祷消除烦恼，却会不自觉流露真实想法，遇到了无表情女孩筒隐月子",
+		episodes: "12 episodes",
+		year: "2013",
+		genre: ["Daily life", "Romance"],
+		studio: "J.C.Staff",
+		link: "https://www.bilibili.com/bangumi/media/md413",
+		progress: 12,
+		totalEpisodes: 12,
+		startDate: "2013-04",
+		endDate: "2013-06"
+	},
+	{
 		title: "樱花庄的宠物女孩",
 		status: "completed",
 		rating: 9.7,
