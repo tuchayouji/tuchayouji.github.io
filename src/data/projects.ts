@@ -1,6 +1,3 @@
-// Project data configuration file
-// Used to manage data for the project display page
-
 export interface Project {
 	id: string;
 	title: string;
@@ -11,55 +8,17 @@ export interface Project {
 	status: "completed" | "in-progress" | "planned";
 	liveDemo?: string;
 	sourceCode?: string;
-	visitUrl?: string;
-	startDate: string;
-	endDate?: string;
-	featured?: boolean;
-	tags?: string[];
-	showImage?: boolean;
 }
 
-export const projectsData: Project[] = [];
-
-// Get project statistics
-export const getProjectStats = () => {
-	const total = projectsData.length;
-	const completed = projectsData.filter((p) => p.status === "completed").length;
-	const inProgress = projectsData.filter(
-		(p) => p.status === "in-progress",
-	).length;
-	const planned = projectsData.filter((p) => p.status === "planned").length;
-
-	return {
-		total,
-		byStatus: {
-			completed,
-			inProgress,
-			planned,
-		},
-	};
-};
-
-// Get projects by category
-export const getProjectsByCategory = (category?: string) => {
-	if (!category || category === "all") {
-		return projectsData;
-	}
-	return projectsData.filter((p) => p.category === category);
-};
-
-// Get featured projects
-export const getFeaturedProjects = () => {
-	return projectsData.filter((p) => p.featured);
-};
-
-// Get all tech stacks
-export const getAllTechStack = () => {
-	const techSet = new Set<string>();
-	projectsData.forEach((project) => {
-		project.techStack.forEach((tech) => {
-			techSet.add(tech);
-		});
-	});
-	return Array.from(techSet).sort();
-};
+export const projectsData: Project[] = [
+	{
+		id: "mizuki-admin",
+		title: "Mizuki Admin",
+		description: "基于 Vue + FastAPI 的 Mizuki 博客管理系统，提供图形化界面管理博客内容，支持站点配置、文章、日记、番剧、友链、相册、技能、时间线、项目等功能的增删改查。",
+		image: "",
+		category: "web",
+		techStack: ["Vue 3", "FastAPI", "Python", "Vite", "Axios"],
+		status: "completed",
+		sourceCode: "https://github.com/tuchayouji/Mizuki-Admin",
+	},
+];

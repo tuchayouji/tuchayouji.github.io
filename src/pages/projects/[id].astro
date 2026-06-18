@@ -1,0 +1,59 @@
+---
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { Icon } from "astro-icon/components";
+import { projectsData } from "../../data/projects";
+
+export function getStaticPaths() {
+  return projectsData.map(project => ({
+    params: { id: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<MainGridLayout title={project.title} description={project.description}>
+  <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden">
+    <div class="card-base z-10 px-9 py-9 relative w-full">
+      <div class="flex items-center gap-4 mb-6">
+        <h1 class="text-3xl font-bold text-black/90 dark:text-white/90">{project.title}</h1>
+        <span class:list={["px-3 py-1 rounded-full text-sm font-medium",
+          project.status === "completed" ? "bg-green-100 text-green-700" : "",
+          project.status === "in-progress" ? "bg-yellow-100 text-yellow-700" : "",
+          project.status === "planned" ? "bg-gray-100 text-gray-700" : ""
+        ]}>
+          {project.status === "completed" ? "已完成" : project.status === "in-progress" ? "进行中" : "计划中"}
+        </span>
+      </div>
+
+      <p class="text-lg text-black/70 dark:text-white/70 mb-8 leading-relaxed">{project.description}</p>
+
+      <div class="mb-8">
+        <h2 class="text-xl font-bold text-black/90 dark:text-white/90 mb-4">技术栈</h2>
+        <div class="flex flex-wrap gap-2">
+          {project.techStack.map(tech => (
+            <span class="px-4 py-2 bg-[var(--primary)]/10 text-[var(--primary)] rounded-lg text-sm font-medium">{tech}</span>
+          ))}
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        {project.sourceCode && (
+          <a href={project.sourceCode} target="_blank" rel="noopener noreferrer"
+            class="flex items-center gap-2 px-6 py-3 bg-[var(--primary)] text-white rounded-lg hover:opacity-90 transition-opacity">
+            <Icon name="fa7-brands:github" class="text-xl" />
+            <span>查看源码</span>
+          </a>
+        )}
+        {project.liveDemo && (
+          <a href={project.liveDemo} target="_blank" rel="noopener noreferrer"
+            class="flex items-center gap-2 px-6 py-3 border-2 border-[var(--primary)] text-[var(--primary)] rounded-lg hover:bg-[var(--primary)]/10 transition-colors">
+            <Icon name="material-symbols:open-in-new" class="text-xl" />
+            <span>在线演示</span>
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+</MainGridLayout>
