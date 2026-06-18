@@ -4,12 +4,13 @@ export interface DiaryItem {
 	content: string;
 	date: string;
 	images?: string[];
+	tags?: string[];
 }
 
 const diaryData: DiaryItem[] = [
 	{
 		id: 3,
-		content: "今天做了个个人博客管理系统，大部分用AI写的，基于Vue和FastAPI，功能还挺齐全的",
+		content: "今天做了个个人博客WebUI图形管理系统，大部分用ai编写的，基于Vue和FastAPI，功能还挺齐全，还需要继续优化与更新。大部分用Mizuki的个人博客都能用。",
 		date: "2026-06-18T21:28:00+08:00"
 	},
 	{
