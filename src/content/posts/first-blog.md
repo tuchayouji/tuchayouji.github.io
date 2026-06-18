@@ -1,6 +1,6 @@
 ---
 title: "初建博客"
-date: 2026-06-18
+published: 2026-06-18
 tags: ["博客", "记录"]
 category: "日常"
 ---
