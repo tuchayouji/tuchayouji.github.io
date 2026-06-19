@@ -106,9 +106,9 @@ const hasAnyContent = $derived(
 
 // 如果所有都锁定了，整个设置按钮都不显示
 const showSettingsButton = $derived(
-	!(siteConfig as any).fixedWallpaper ||
-	!(siteConfig as any).fixedBanner ||
-	!(siteConfig as any).fixedLayout ||
+	!siteConfig.fixedWallpaper ||
+	!siteConfig.fixedBanner ||
+	!siteConfig.fixedLayout ||
 	!siteConfig.themeColor.fixed
 );
 
