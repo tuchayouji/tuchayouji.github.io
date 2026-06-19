@@ -12,8 +12,13 @@ export const siteConfig: SiteConfig = {
 
   themeColor: {
     hue: 30, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
-    fixed: false, // 对访问者隐藏主题色选择器
+    fixed: true, // 对访问者隐藏主题色选择器
   },
+
+  // 显示设置锁定配置
+  fixedWallpaper: true, // 锁定壁纸模式，访客不可切换
+  fixedBanner: true, // 锁定横幅选项，访客不可切换
+  fixedLayout: true, // 锁定布局模式，访客不可切换
 
   // 特色页面开关配置（关闭未使用的页面有助于提升 SEO，关闭后请记得在 navbarConfig 中移除对应链接）
   featurePages: {
@@ -74,7 +79,7 @@ export const siteConfig: SiteConfig = {
 	postListLayout: {
 		// 默认布局模式："list" 列表模式（单列布局），"grid" 网格模式（双列布局）
 		// 注意：如果侧边栏配置启用了"both"双侧边栏，则无法使用文章列表"grid"网格（双列）布局
-		defaultMode: "list",
+		defaultMode: "grid",
 		// 是否启用布局切换功能
 		enable: true,
 		// 是否允许用户切换布局

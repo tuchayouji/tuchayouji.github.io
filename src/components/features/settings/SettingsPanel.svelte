@@ -45,7 +45,8 @@ type LayoutMode = "list" | "grid";
 const showThemeColor = !siteConfig.themeColor.fixed;
 const allowLayoutSwitch =
 	(siteConfig.postListLayout.enable ?? false) &&
-	siteConfig.postListLayout.allowSwitch;
+	siteConfig.postListLayout.allowSwitch &&
+	!(siteConfig as any).fixedLayout;
 const defaultLayout = siteConfig.postListLayout.defaultMode as LayoutMode;
 const defaultWallpaperMode = siteConfig.wallpaperMode.defaultMode;
 
@@ -71,10 +72,12 @@ const hasOverlaySettings =
 
 const isWavesSwitchable =
 	(siteConfig.banner?.waves?.enable ?? false) &&
-	(siteConfig.banner?.waves?.switchable ?? false);
+	(siteConfig.banner?.waves?.switchable ?? false) &&
+	!(siteConfig as any).fixedBanner;
 const isBannerTitleSwitchable =
 	(siteConfig.banner?.homeText?.enable ?? false) &&
-	(siteConfig.banner?.homeText?.switchable ?? false);
+	(siteConfig.banner?.homeText?.switchable ?? false) &&
+	!(siteConfig as any).fixedBanner;
 const hasBannerSettings = isWavesSwitchable || isBannerTitleSwitchable;
 
 const isSakuraSwitchable =
@@ -84,6 +87,7 @@ const showModeValue = siteConfig.wallpaperMode.showModeSwitchOnMobile;
 let isMobile = $state(false);
 
 const isWallpaperModeSwitchable = $derived(
+	!(siteConfig as any).fixedWallpaper &&
 	(showModeValue === "both" ||
 		(showModeValue === "mobile" && isMobile) ||
 		(showModeValue === "desktop" && !isMobile)) &&
@@ -98,6 +102,14 @@ const hasAnyContent = $derived(
 		hasOverlaySettings ||
 		hasBannerSettings ||
 		isSakuraSwitchable,
+);
+
+// 如果所有都锁定了，整个设置按钮都不显示
+const showSettingsButton = $derived(
+	!(siteConfig as any).fixedWallpaper ||
+	!(siteConfig as any).fixedBanner ||
+	!(siteConfig as any).fixedLayout ||
+	!siteConfig.themeColor.fixed
 );
 
 let hue = $state(getHue());
