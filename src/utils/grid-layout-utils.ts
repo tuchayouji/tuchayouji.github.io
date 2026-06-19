@@ -200,10 +200,10 @@ export function calculateGridLayout(
 export async function getBannerImages(
 	siteConfig: SiteConfig,
 ): Promise<BannerImages> {
-	let bannerSrc = siteConfig.banner.src;
+	let bannerSrc = siteConfig?.banner?.src ?? [];
 
 	// 如果启用了图片API，获取API图片
-	if (siteConfig.banner.imageApi?.enable && siteConfig.banner.imageApi?.url) {
+	if (siteConfig?.banner?.imageApi?.enable && siteConfig?.banner?.imageApi?.url) {
 		try {
 			const response = await fetch(siteConfig.banner.imageApi.url);
 			const text = await response.text();
