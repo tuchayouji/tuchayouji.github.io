@@ -45,6 +45,14 @@ export const LOCAL_PLAYLIST: Song[] = [
 		url: "assets/music/url/fruitbasket.mp3",
 		duration: 0,
 	},
+	{
+		id: 6,
+		title: "好想大声说爱你",
+		artist: "茶理理",
+		cover: "assets/music/cover/sukidakara.webp",
+		url: "assets/music/url/sukidakara.mp3",
+		duration: 0,
+	},
 ];
 
 export const DEFAULT_SONG: Song = {
