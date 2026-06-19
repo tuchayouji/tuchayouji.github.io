@@ -37,6 +37,14 @@ export const LOCAL_PLAYLIST: Song[] = [
 		url: "assets/music/url/cl.mp3",
 		duration: 200,
 	},
+	{
+		id: 5,
+		title: "水果篮子",
+		artist: "玖肆仟",
+		cover: "assets/music/cover/fruitbasket.webp",
+		url: "assets/music/url/fruitbasket.mp3",
+		duration: 0,
+	},
 ];
 
 export const DEFAULT_SONG: Song = {
