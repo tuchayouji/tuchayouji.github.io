@@ -16,9 +16,9 @@ export const siteConfig: SiteConfig = {
   },
 
   // 显示设置锁定配置
-  fixedWallpaper: false, // 锁定壁纸模式，访客不可切换
-  fixedBanner: false, // 锁定横幅选项，访客不可切换
-  fixedLayout: false, // 锁定布局模式，访客不可切换
+  fixedWallpaper: true, // 锁定壁纸模式，访客不可切换
+  fixedBanner: true, // 锁定横幅选项，访客不可切换
+  fixedLayout: true, // 锁定布局模式，访客不可切换
 
   // 特色页面开关配置（关闭未使用的页面有助于提升 SEO，关闭后请记得在 navbarConfig 中移除对应链接）
   featurePages: {
