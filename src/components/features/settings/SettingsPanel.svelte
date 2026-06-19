@@ -46,7 +46,7 @@ const showThemeColor = !siteConfig.themeColor.fixed;
 const allowLayoutSwitch =
 	(siteConfig.postListLayout.enable ?? false) &&
 	siteConfig.postListLayout.allowSwitch &&
-	!(siteConfig as any).fixedLayout;
+	!siteConfig.fixedLayout;
 const defaultLayout = siteConfig.postListLayout.defaultMode as LayoutMode;
 const defaultWallpaperMode = siteConfig.wallpaperMode.defaultMode;
 
@@ -73,11 +73,11 @@ const hasOverlaySettings =
 const isWavesSwitchable =
 	(siteConfig.banner?.waves?.enable ?? false) &&
 	(siteConfig.banner?.waves?.switchable ?? false) &&
-	!(siteConfig as any).fixedBanner;
+	!siteConfig.fixedBanner;
 const isBannerTitleSwitchable =
 	(siteConfig.banner?.homeText?.enable ?? false) &&
 	(siteConfig.banner?.homeText?.switchable ?? false) &&
-	!(siteConfig as any).fixedBanner;
+	!siteConfig.fixedBanner;
 const hasBannerSettings = isWavesSwitchable || isBannerTitleSwitchable;
 
 const isSakuraSwitchable =
@@ -87,7 +87,7 @@ const showModeValue = siteConfig.wallpaperMode.showModeSwitchOnMobile;
 let isMobile = $state(false);
 
 const isWallpaperModeSwitchable = $derived(
-	!(siteConfig as any).fixedWallpaper &&
+	!siteConfig.fixedWallpaper &&
 	(showModeValue === "both" ||
 		(showModeValue === "mobile" && isMobile) ||
 		(showModeValue === "desktop" && !isMobile)) &&

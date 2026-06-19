@@ -31,6 +31,11 @@ export interface SiteConfig {
 		fixed: boolean;
 	};
 
+	// 显示设置锁定配置
+	fixedWallpaper?: boolean;
+	fixedBanner?: boolean;
+	fixedLayout?: boolean;
+
 	// 特色页面开关配置
 	featurePages: {
 		anime: boolean; // 番剧页面开关
