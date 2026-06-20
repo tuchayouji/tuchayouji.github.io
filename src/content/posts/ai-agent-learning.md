@@ -1,11 +1,11 @@
 ---
-title: "从零开始学习 AI Agent：我的六章学习笔记与实践"
+title: "从零开始学习 AI Agent：Hello Agents前六章学习与实践"
 published: 2026-06-20
 tags: ["AI", "Agent", "学习笔记"]
 category: "技术"
 ---
 
-# 从零开始学习 AI Agent：我的六章学习笔记与实践
+# 从零开始学习 AI Agent：Hello Agents前六章学习与实践
 
 > 本文基于 Datawhale 社区的《Hello-Agents》教程，记录了从智能体基础概念到框架开发实践的完整学习路径。
 
